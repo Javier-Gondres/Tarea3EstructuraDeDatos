@@ -31,6 +31,7 @@ public class Main {
         grafo.agregarArista("H", "I");
         grafo.agregarArista("I", "F");
 
+        grafo.mostrarGrafo();
         grafo.mostrarSecuenciaDeGrados();
     }
 
@@ -51,6 +52,14 @@ public class Main {
 
             adyacencia.get(origen).add(destino);
             adyacencia.get(destino).add(origen);
+        }
+
+        public void mostrarGrafo() {
+            for (String vertice : adyacencia.keySet()) {
+                System.out.print(vertice + " -> ");
+                List<String> adyacentes = adyacencia.get(vertice);
+                System.out.println(adyacentes);
+            }
         }
 
         public void mostrarSecuenciaDeGrados() {
